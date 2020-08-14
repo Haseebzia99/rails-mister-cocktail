@@ -18,13 +18,13 @@ class CocktailsController < ApplicationController
     else
       render :new
   end
-end
 
+end
 
 private
 
 def strong_params
-params.requie(:cocktail).permit(:name)
+params.require(:cocktail).permit(:name, :photo)
 end
 
 end

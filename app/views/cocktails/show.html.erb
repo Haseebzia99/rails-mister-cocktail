@@ -1,2 +1,14 @@
 <h1><%= @cocktail.name %>
-<%= link_to "All cocktails", cocktail_path %>
+<%= link_to "All cocktails", cocktails_path %>
+<%= cl_image_tag("btm3gkpcm5jbfhn3ma1fhum2my0j",
+      width: 400, height: 300, crop: :fill) %>
+
+  <%= cl_image_tag("u5exdd3uf5xjc59n73ikowqfto6u",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+<% @cocktail.doses.each do |dose| %>
+<%= dose.description + " and " + dose.ingredient.name %>
+<% end %>
+
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
